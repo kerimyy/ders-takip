@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: linear-gradient(120deg, rgb(120, 170, 211),rgb(120, 211, 184));
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    color: white;
+} 
+header{
+    font-size: 1.5rem;
+}
+
+header,form{
+    min-height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+form input,
+form button{
+    font-size: 1.5rem;
+    border: none;
+    background: white;
+    padding: 0.5rem;
+    outline: none;
+}
+form button{
+    color: rgb(120, 200, 211);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+form button:hover{
+    
+    background-color: rgb(120, 200, 211);
+    color: white;
+    
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+.liste{
+    width: 80vw;
+
+}
+
+.satir{
+    min-height: 8vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.ders{
+    font-size: 2rem;
+    min-width: 18rem;
+    background-color: rgb(84, 161, 172);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    margin-right: 2rem;
+    cursor: pointer;
+    z-index: 1;
+    box-shadow: 3px 3px 10px rgb(46, 109, 119);
+}
+
+.top{
+    min-width: 50px;
+    min-height: 50px;
+    border: 2px solid rgb(84, 161, 172);
+    border-radius: 50%;
+    margin: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    
+
+}
+
+.top:hover{
+    background-color: rgb(84, 161, 172);
+}
+.selected{
+    border: 2px solid white;
+}
+.ekle_sil{
+    font-size: 3rem;
+    width: 18rem;
+    border-radius: 5px;
+    display: flex;
+    margin-right: 2rem;
+    cursor: pointer;
+    position: absolute;
+    overflow: hidden;
+    visibility: hidden;
+    z-index: 2;
+    box-shadow: 3px 3px 10px rgb(46, 109, 119);
+}
+
+.arti{
+    background-color: rgb(62, 179, 62);
+}
+.eksi{
+    background-color: rgb(179, 56, 56);  
+}
+
+.arti,.eksi{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.fa-minus,
+.fa-plus {
+  pointer-events: none;
+}
+
+
+.unselectable {
+    -webkit-user-select: none;  
+    -moz-user-select: none;    
+    -ms-user-select: none;     
+    user-select: none;            
+  }
+
+
+

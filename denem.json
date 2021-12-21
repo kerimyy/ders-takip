@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Robotik",
+        "count": 8,
+        "items":[
+            {
+                "id":1,
+                "selected": true,
+                "head": "konu başlıkları",
+                "content": "notlar"
+
+            },
+            {
+                "id":2,
+                "selected": false,
+                "head": "konu başlıkları",
+                "content": "notlar"
+
+            }
+
+        ]
+    },
+    {
+        "name": "İleri Veri Yapıları",
+        "count": 8,
+        "items":[
+            {
+                "id":1,
+                "selected": true,
+                "head": "konu başlıkları",
+                "content": "notlar"
+
+            },
+            {
+                "id":2,
+                "selected": false,
+                "head": "konu başlıkları",
+                "content": "notlar"
+
+            }
+
+        ]
+    },
+    {
+        "name": "Biyoinformatik",
+        "count": 9,
+        "items":[
+            {
+                "id":1,
+                "selected": true,
+                "head": "konu başlıkları",
+                "content": "notlar"
+
+            },
+            {
+                "id":2,
+                "selected": false,
+                "head": "konu başlıkları",
+                "content": "notlar"
+
+            }
+
+        ]
+    }
+]
