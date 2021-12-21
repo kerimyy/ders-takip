@@ -15,6 +15,7 @@ function addLesson() {
 
 
 }
+
 function createAddDel(ders) {
     const satir = ders.parentElement;
     const ekleSil = document.createElement("div");
