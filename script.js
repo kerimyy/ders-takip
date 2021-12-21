@@ -6,7 +6,7 @@ liste.addEventListener("click", addBall);
 btn.addEventListener("click", addLesson);
 
 getLessons();
-
+console.log("sa");
 function addLesson() {
     var text = dersAdi.value;
     dersAdi.value = "";
