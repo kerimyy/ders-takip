@@ -1,9 +1,16 @@
 const btn = document.getElementById("dersEkle");
 const dersAdi = document.getElementById("dersAdi");
 const liste = document.querySelector(".liste");
+const con = document.querySelector(".defter-con");
 liste.addEventListener("click", addBall);
 btn.addEventListener("click", addLesson);
-
+const formNote=`<div class="defter">
+<form id="note-form" onsubmit="return false;">
+    <input type="text" placeholder="Konu Başlıkları" id="title">
+    <textarea placeholder="not..."name="notes" id="note" ></textarea>
+    <div class="save"><i class="far fa-save"></i></div>
+</form></div>`;
+var lookingBall;
 getLessons();
 
 function addLesson() {
@@ -100,8 +107,8 @@ function saveCount(item) {
             let newItem = {
                 id: (lastId + 1),
                 selected: false,
-                head: "konu başlıkları",
-                content: "notlar"
+                head: "",
+                content: ""
             };
             item.items.push(newItem);
             return;
@@ -164,7 +171,9 @@ function getLessons() {
         var count = item.count;
         for (var i = 1; count >= i; i++) {
             var isSelected = item.items[i].selected;
-            createBall(satirDiv, i, isSelected)
+            var head = item.items[i].head;
+            var content = item.items[i].content;
+            createBall(satirDiv, i, isSelected,head,content)
         }
 
 
@@ -172,7 +181,7 @@ function getLessons() {
 
 }
 
-function createBall(satir, num, isSelected) {
+function createBall(satir, num, isSelected, head, content) {
     const topDiv = document.createElement("div");
     topDiv.classList.add("top");
     topDiv.classList.add("unselectable");
@@ -182,6 +191,40 @@ function createBall(satir, num, isSelected) {
     var lessons = JSON.parse(localStorage.getItem("lessons"));
 
     const lesson = satir.children[0].textContent;
+
+    topDiv.addEventListener("click", function () {
+        if(topDiv.classList.contains("looking")){
+            con.innerHTML="";
+            lookingBall.classList.remove("looking");
+            return;
+        }
+        if(lookingBall){
+            lookingBall.classList.remove("looking");
+        }
+
+        topDiv.classList.add("looking");
+        lookingBall = topDiv;
+        con.innerHTML = formNote;
+        var noteTitle = document.getElementById("title");
+        var note = document.getElementById("note");
+        var save = document.querySelector(".save");
+        lessons = JSON.parse(localStorage.getItem("lessons"));
+        lessons.forEach(function (item) {
+            if (item.name == lesson) {
+                noteTitle.value = item.items[num].head;
+                note.value = item.items[num].content;
+
+                save.addEventListener("click",function(){
+                    item.items[num].head = noteTitle.value;
+                    item.items[num].content = note.value;
+                    localStorage.setItem("lessons", JSON.stringify(lessons));
+                    window.alert(item.name+" dersinin "+num+". ders notu başarılı bir şekilde kaydedildi");
+                })
+            }
+
+        });
+        localStorage.setItem("lessons", JSON.stringify(lessons));
+    }) 
 
 
     topDiv.addEventListener("dblclick", function () {
@@ -201,7 +244,7 @@ function createBall(satir, num, isSelected) {
 
         });
         localStorage.setItem("lessons", JSON.stringify(lessons));
-    })
+    });
 }
 
 function removeBall(satir) {

@@ -44,6 +44,8 @@ form button:hover{
 .container{
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 .liste{
     width: 80vw;
@@ -67,6 +69,7 @@ form button:hover{
     cursor: pointer;
     z-index: 1;
     box-shadow: 3px 3px 10px rgb(46, 109, 119);
+    transition: all 0.2s ease;
 }
 
 .top{
@@ -80,13 +83,12 @@ form button:hover{
     align-items: center;
     font-size: 1.5rem;
     cursor: pointer;
-    
-
+    transition: all 0.2s ease;
 }
 
 .top:hover{
-    
-    border: 2px solid white;
+    box-shadow: 3px 3px 10px rgb(46, 109, 119);
+   
 }
 .selected{
     background-color: rgb(84, 161, 172);
@@ -132,5 +134,57 @@ form button:hover{
     user-select: none;            
   }
 
+textarea{
+    resize: none;
+    border: none;
+    outline: none;
+    box-shadow: 3px 3px 10px rgb(46, 109, 119);
+    font-size: 1.2rem;
+    width: 25rem;
+    height: 15rem;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
+}
+
+.defter{
+    margin-top: 3rem;
+    background-color: rgba(255, 255, 255, 0.37);
+    padding: 2rem;
+    box-shadow: 3px 3px 10px rgb(46, 109, 119);
+    
+}
+.defter form input{
+    box-shadow: 3px 3px 10px rgb(46, 109, 119);
+    width: 25rem;
+    margin-bottom: 1rem;
+}
+
+.defter form{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+
+.save{
+    min-width: 40px;
+    min-height: 40px;
+    background-color: rgb(84, 161, 172);
+    border-radius: 50%;
+    margin: 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.looking{
+    background-color: white;
+    color:rgb(84, 161, 172);
+    border: none;
+}
 
