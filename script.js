@@ -1,7 +1,6 @@
 const btn = document.getElementById("dersEkle");
 const dersAdi = document.getElementById("dersAdi");
 const liste = document.querySelector(".liste");
-const ekleSilsss = '<div class="ekle_sil "><div class="arti"><i class="fas fa-plus"></i></div><div class="eksi"><i class="fas fa-minus"></i></div></div>';
 liste.addEventListener("click", addBall);
 btn.addEventListener("click", addLesson);
 

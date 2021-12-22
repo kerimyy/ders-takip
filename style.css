@@ -85,10 +85,11 @@ form button:hover{
 }
 
 .top:hover{
-    background-color: rgb(84, 161, 172);
+    
+    border: 2px solid white;
 }
 .selected{
-    border: 2px solid white;
+    background-color: rgb(84, 161, 172);
 }
 .ekle_sil{
     font-size: 3rem;
