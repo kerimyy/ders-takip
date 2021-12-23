@@ -15,6 +15,7 @@ getLessons();
 
 function addLesson() {
     var text = dersAdi.value;
+    if(!text){return;}
     dersAdi.value = "";
     saveLessons(text);
     createLesson(text);

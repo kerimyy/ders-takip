@@ -14,6 +14,10 @@ header{
     font-size: 1.5rem;
 }
 
+header,.ekle-form,.container,.liste{
+    min-width: 62rem;
+}
+
 header,form{
     min-height: 15vh;
     display: flex;
@@ -186,5 +190,16 @@ textarea{
     background-color: white;
     color:rgb(84, 161, 172);
     border: none;
+}
+
+.info{
+    position: absolute;
+    background-color: white;
+    color: rgb(84, 161, 172);
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    box-shadow: 3px 3px 10px rgb(46, 109, 119);
+    min-width: 10.5rem;
 }
 
