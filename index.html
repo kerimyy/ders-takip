@@ -13,8 +13,16 @@
 
 <body>
     <div class="info"><b>Çift Tık: </b>Tamamlandı<br><b>Tek Tık: </b>Not</div>
+    <div class="search-bar">
+        <form class="search-form" onsubmit="return false;">
+            <input class ="search-input" type="text" placeholder="Konu ara">
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+        </form>
+        <p id="search-res"></p>
+    </div>
+    
     <header>
-        <h1>Online Ders Takip Sistemi</h1>(beta)
+        <h1>Online Ders Takip Sistemi</h1>
 
     </header>
     <form onsubmit="return false;" class="ekle-form">
@@ -24,6 +32,7 @@
     <div class="container">
         <div class="liste"></div>
         <div class="defter-con"></div>
+        
     </div>
 
 

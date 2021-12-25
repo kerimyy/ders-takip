@@ -10,15 +10,20 @@ body{
     height: 100vh;
     color: white;
 } 
-header{
-    font-size: 1.5rem;
-}
+
 
 header,.ekle-form,.container,.liste{
     min-width: 62rem;
 }
 
-header,form{
+header{
+    font-size: 1.5rem;
+    min-height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+form{
     min-height: 15vh;
     display: flex;
     justify-content: center;
@@ -203,3 +208,25 @@ textarea{
     min-width: 10.5rem;
 }
 
+.search-form{
+    border-radius: 20px;
+    overflow: hidden;
+    opacity: 0.5;
+    min-height: 1vh;
+}
+
+.search-bar{
+    position: absolute;
+    right: 1rem;
+    top:1rem;
+}
+
+#search-res{
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+
+.non-op{
+    opacity: 1;
+}

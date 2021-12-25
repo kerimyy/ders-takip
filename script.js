@@ -2,8 +2,18 @@ const btn = document.getElementById("dersEkle");
 const dersAdi = document.getElementById("dersAdi");
 const liste = document.querySelector(".liste");
 const con = document.querySelector(".defter-con");
+const searchForm = document.querySelector(".search-form");
+const searchBtn = document.querySelector(".search-btn");
+const searchIn = document.querySelector(".search-input");
+const searchRes = document.getElementById("search-res");
+
+searchBtn.addEventListener("click",searchRemove);
+searchIn.addEventListener("input",search);
+searchIn.addEventListener("click",searchOp);
+searchIn.addEventListener("input",searchOp);
 liste.addEventListener("click", addBall);
 btn.addEventListener("click", addLesson);
+
 const formNote=`<div class="defter">
 <form id="note-form" onsubmit="return false;">
     <input type="text" placeholder="Konu Başlıkları" id="title">
@@ -80,7 +90,6 @@ function addBall(e) {
     const item = e.target;
     const satir = item.parentElement.parentElement;
     const ders = satir.children[0];
-    console.log(item);
     if (item.classList[0] === "arti") {
         var count = saveCount(ders);
         createBall(satir, count);
@@ -268,4 +277,38 @@ function removeLesson(ders) {
     lessons.splice(index, 1);
     localStorage.setItem("lessons", JSON.stringify(lessons));
     ders.parentElement.remove();
+}
+
+
+function searchOp(){
+    if(searchForm.classList.length == 1){
+        searchForm.classList.add("non-op");
+    }
+}
+
+function search(){
+    let text =  searchIn.value;
+    searchRes.innerHTML = "";
+    let lessons;
+    if (localStorage.getItem("lessons") === null) {
+        window.alert("Aranacak not yok");
+        return;
+    } else {
+        lessons = JSON.parse(localStorage.getItem("lessons"));
+    }
+
+    lessons.forEach(function (ders) {
+        var items = ders.items
+        items.forEach(function (item){
+            if(item.head.includes(text)){
+                searchRes.innerHTML += ders.name+" "+item.id+"<br>";
+            }
+        });
+    });
+
+}
+
+function searchRemove(){
+    searchIn.value = "";
+    searchForm.classList.remove("non-op");
 }
